@@ -16,6 +16,10 @@ a img {
   width: 845px;
   margin: 0 auto;
 }
+#wrapper #content .post .phototitlebox p {
+  padding: 0px;
+  margin: 0px;
+}
 #wrapper #content .post a {
   color: #6e7173;
   text-decoration: none;
