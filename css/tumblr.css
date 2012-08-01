@@ -12,7 +12,7 @@ a img {
   border: none;
 }
 #wrapper {
-  padding-top: 72px;
+  padding-top: 100px;
   width: 845px;
   margin: 0 auto;
 }
@@ -55,7 +55,7 @@ a img {
   color: #000;
 }
 #wrapper #sidebar #logo {
-  padding-top: 28px;
+  padding-top: -28px;
 }
 #wrapper #sidebar #logo img {
   width: 224px:
