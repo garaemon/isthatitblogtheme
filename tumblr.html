@@ -50,6 +50,18 @@
         l.parentNode.insertBefore(tumblr_css, l);
       }
     </script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
+    </script>
+    <script>
+      $(function() {
+        $(".post a img").each(function() {
+          $(this).parent().attr("href", $(this).attr("posturl"));
+         });
+        $(".post .textpost img").each(function() {
+          $(this).wrap('<a href="' + $(this).parent().parent().attr("posturl") + '" />');
+         });
+      });
+    </script>
     <!-- <link rel="stylesheet" href="http://garaemon.github.com/isthatitblogtheme/css/bootstrap.css" /> -->
     <!-- <link rel="stylesheet" href="http://garaemon.github.com/isthatitblogtheme/css/tumblr.css" /> -->
     <!-- <link rel="stylesheet/less" type="text/css" href="http://garaemon.github.com/isthatitblogtheme/less/tumblr.less"> -->
@@ -87,14 +99,8 @@ mixpanel.init("be69358eba9f2f837612946a3e8461db");</script><!-- end Mixpanel -->
                         
                       </div>
                       <p>
-                      {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}
+                      {LinkOpenTag}<img posturl="{ShortURL}" src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}
                       </p>
-                      <div class="bottom">
-                        <div style="font-size: 10px; text-align: left;">
-                          <a class="dsq-comment-count" href="{Permalink}#disqus_thread">
-                            Comments</a>
-                        </div>
-                      </div>
                     {/block:Photo}
                     {block:Text}
                         <div class="titlebox">
@@ -108,33 +114,14 @@ mixpanel.init("be69358eba9f2f837612946a3e8461db");</script><!-- end Mixpanel -->
                           {/block:Date}
                         </div>
                         <div class="clear"></div>
-                        <div class="copy">{Body}</div>
+                        <div class="copy textpost" posturl="{ShortURL}">{Body}</div>
+                    {/block:Text}
                         <div class="bottom">
                           <div style="font-size: 10px; text-align: left;">
                             <a class="dsq-comment-count" href="{Permalink}#disqus_thread">
                               Comments</a>
                           </div>
                         </div>
-                    {/block:Text}
-                    
-                    {block:IfShowTags}
-                        {block:HasTags}<div class="footer"><div class="tags">Tagged: {block:Tags}<a href="{TagURL}">{Tag}</a><span class="tag-commas">, </span>{/block:Tags}.</div></div>{/block:HasTags}
-                    {/block:IfShowTags}
-                    
-                    {block:PostNotes}<div class="notecontainer">{PostNotes}</div>{/block:PostNotes}
-                    
-                    {block:IfDisqusShortname}
-                        {block:Permalink}
-                            <div class="notecontainer" style="margin: 20px 0 1px 0; padding: 1px 10px 10px 10px;">
-                                <div id="disqus_thread"></div>
-                                <script type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script>
-                                <noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">View the discussion thread.</a></noscript>
-                            </div>
-                            <div style="text-align: right; margin-top: 5px">
-                                <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-                            </div>
-                        {/block:Permalink}
-                    {/block:IfDisqusShortname}
                 </div>
                         <!-- disqus -->
                 <script type="text/javascript">var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>{block:Permalink}<div id="disqus_thread"></div>
