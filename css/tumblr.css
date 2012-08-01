@@ -66,6 +66,9 @@ a img {
 #wrapper #sidebar a {
   color: #000;
 }
+#wrapper #sidebar #logo {
+  padding-top: 70px;
+}
 #wrapper #sidebar #logo img {
   width: 224px:
                 height: 42px;
