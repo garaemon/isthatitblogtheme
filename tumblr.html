@@ -71,6 +71,21 @@ mixpanel.init("be69358eba9f2f837612946a3e8461db");</script><!-- end Mixpanel -->
         <div id="content">
             {block:Posts}            
                 <div class="post">
+                    {block:Photo}
+                      <div class="titlebox">
+                        {block:Caption}<div class="title">{Caption}</div>{/block:Caption}
+                        {block:Date}
+                          <div class="date">
+                            <a href="{Permalink}">
+                              {TimeAgo}
+                            </a>
+                          </div>
+                          {/block:Date}
+                        
+                      </div>
+                      <div class="media">{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}</div>
+                      
+                    {/block:Photo}
                     {block:Text}
                         <div class="titlebox">
                           {block:Title}<div class="title">{Title}</div>{/block:Title}
@@ -82,6 +97,7 @@ mixpanel.init("be69358eba9f2f837612946a3e8461db");</script><!-- end Mixpanel -->
                           </div>
                           {/block:Date}
                         </div>
+                        <div class="clear"></div>
                         <div class="copy">{Body}</div>
                         <div class="bottom">
                           <div style="font-size: 10px; text-align: left;">
