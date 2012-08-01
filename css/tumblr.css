@@ -17,7 +17,7 @@ a img {
   margin: 0 auto;
 }
 #wrapper #title {
-  margin: 30px 0;
+  margin: 100px 0;
   color: #000;
   font-size: 50px;
   font-weight: bold;
@@ -65,9 +65,6 @@ a img {
 }
 #wrapper #sidebar a {
   color: #000;
-}
-#wrapper #sidebar #logo {
-  padding-top: 70px;
 }
 #wrapper #sidebar #logo img {
   width: 224px:
