@@ -24,7 +24,10 @@ $(function() {
         var tag = $a.html();
         if (startsWith(tag, "name:")) {
           name = tag.slice(5);
+          // change the link
+          $snapbox.find(".imglink").attr("href", "/tagged/" + tag);
         }
+        
       });
       var $contenthover = $('<div class="contenthover center">'
                             + name.toUpperCase() + '</div>');
