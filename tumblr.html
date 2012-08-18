@@ -145,12 +145,41 @@
     {block:ifInfiniteScroll}{block:IndexPage}<div id="loading"></div>{/block:IndexPage}{/block:ifInfiniteScroll}
 
     <!-- javascripts -->
-    <script type="text/javascript" src="/javascripts/jquery-1.7.2.min.js"></script>
-    <script src="/javascripts/jquery.imagesloaded.min.js"></script>
-    <script src="/javascripts/jquery.contenthover.min.js"></script>
-    <script src="/javascripts/jquery.ismobile.js"></script>
-    <script type="text/javascript" src="/javascripts/kicksontheroad.js"></script>
-    
-  </body>
+    <script type="text/javascript">
+      var js = "/javascripts/jquery-1.7.2.min.js";
+      if (!(location.href.indexOf("http://localhost") === 0)) {
+         js = "http://garaemon.github.com/isthatitblogtheme" + js;
+      }
+      document.write('<script src="' + js + '"></' + 'script>');
+    </script>
+    <script type="text/javascript">
+      var js = "/javascripts/jquery.imagesloaded.min.js";
+      if (!(location.href.indexOf("http://localhost") === 0)) {
+         js = "http://garaemon.github.com/isthatitblogtheme" + js;
+      }
+      document.write('<script src="' + js + '"></' + 'script>');
+    </script>
+    <script type="text/javascript">
+      var js = "/javascripts/jquery.contenthover.min.js";
+      if (!(location.href.indexOf("http://localhost") === 0)) {
+         js = "http://garaemon.github.com/isthatitblogtheme" + js;
+      }
+      document.write('<script src="' + js + '"></' + 'script>');
+    </script>
+    <script type="text/javascript">
+      var js = "/javascripts/jquery.ismobile.js";
+      if (!(location.href.indexOf("http://localhost") === 0)) {
+         js = "http://garaemon.github.com/isthatitblogtheme" + js;
+      }
+      document.write('<script src="' + js + '"></' + 'script>');
+    </script>
+    <script type="text/javascript">
+      var js = "/javascripts/kicksontheroad.js";
+      if (!(location.href.indexOf("http://localhost") === 0)) {
+         js = "http://garaemon.github.com/isthatitblogtheme" + js;
+      }
+      document.write('<script src="' + js + '"></' + 'script>');
+    </script>
+   </body>
 </html>
 
