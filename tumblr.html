@@ -1,192 +1,212 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-    <!-- DEFAULT VARIABLES -->
-    <meta name="if:Show People I Follow" content="1" />
-    <meta name="if:Show Tags" content="1" />
-    <meta name="if:Show Album Art on Audio Posts" content="1" />
-    <meta name="text:Disqus Shortname" content="" />
-    
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>{Title}
-      {block:SearchPage} -- Search results for: {SearchQuery}{/block:SearchPage}
-      {block:PostSummary} -- {PostSummary}{/block:PostSummary}
-    </title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      id="{block:IndexPage}index{/block:IndexPage}{block:PermalinkPage}permalink{/block:PermalinkPage}"
+      class="no-js {block:ifNotInfiniteScroll}no-{/block:ifNotInfiniteScroll}infscr {block:ifNotEnableAnimations}no-{/block:ifNotEnableAnimations}animations transitions {block:ifNotFadeInFirstPage}no-{/block:ifNotFadeInFirstPage}fadein {block:ifNotMobileCompatibility}no-{/block:ifNotMobileCompatibility}mobcompat not-mobile">
+  <!-- kicks on the road theme
+       inspired by Tessellate theme
+    -->
+  <head>
+    <title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
     {block:Description}
-      <meta name="description" content="{MetaDescription}" />
+    <meta name="description" content="{MetaDescription}" />
     {/block:Description}
     <link rel="shortcut icon" href="{Favicon}" />
     <link rel="alternate" type="application/rss+xml" href="{RSS}" />
-    <!-- load css -->
-    <script>
-      var s = document.getElementsByTagName("script")[0];
-      var l = document.getElementsByTagName("link")[0];
-      if (location.host.indexOf("localhost") === 0) { <!-- if localhost -->
-        var bootstrap_css = document.createElement("link");
-        bootstrap_css.rel = "stylesheet";
-        bootstrap_css.href = "http://" + location.host + "/css/bootstrap.css";
-        l.parentNode.insertBefore(bootstrap_css, l);
-      
-        var less_js = document.createElement("script");
-        less_js.async=!0
-        less_js.type = "text/javascript";
-        less_js.src = "http://" + location.host + "/javascripts/less-1.3.0.min.js";
-        s.parentNode.insertBefore(less_js, s);
-        
-        var tumblr_less = document.createElement("link");
-        tumblr_less.rel = "stylesheet/less";
-        tumblr_less.type = "text/css";
-        tumblr_less.href = "http://" + location.host + "/less/tumblr.less";
-        l.parentNode.insertBefore(tumblr_less, l);
-        }
-      else {
-        var bootstrap_css = document.createElement("link");
-        bootstrap_css.rel = "stylesheet";
-        bootstrap_css.href = "http://garaemon.github.com/isthatitblogtheme/css/bootstrap.css";
-        l.parentNode.insertBefore(bootstrap_css, l);
-        var tumblr_css = document.createElement("link");
-        tumblr_css.rel = "stylesheet";
-        tumblr_css.href = "http://garaemon.github.com/isthatitblogtheme/css/tumblr.css";
-        l.parentNode.insertBefore(tumblr_css, l);
-      }
-    </script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
-    </script>
-    <script>
-      $(function() {
-        $(".post a img").each(function() {
-          $(this).parent().attr("href", $(this).attr("posturl"));
-         });
-        $(".post .textpost img").each(function() {
-          $(this).wrap('<a href="' + $(this).parent().parent().attr("posturl") + '" />');
-         });
-      });
-    </script>
-    <!-- <link rel="stylesheet" href="http://garaemon.github.com/isthatitblogtheme/css/bootstrap.css" /> -->
-    <!-- <link rel="stylesheet" href="http://garaemon.github.com/isthatitblogtheme/css/tumblr.css" /> -->
-    <!-- <link rel="stylesheet/less" type="text/css" href="http://garaemon.github.com/isthatitblogtheme/less/tumblr.less"> -->
-    <!--   <script src="http://garaemon.github.com/isthatitblogtheme/javascripts/less-1.3.0.min.js" type="text/javascript"></script> -->
-    
-    <!-- start Mixpanel --><script type="text/javascript">(function(c,a){window.mixpanel=a;var b,d,h,e;b=c.createElement("script");b.type="text/javascript";b.async=!0;b.src=("https:"===c.location.protocol?"https:":"http:")+'//api.mixpanel.com/site_media/js/api/mixpanel.2.js';d=c.getElementsByTagName("script")[0];d.parentNode.insertBefore(b,d);a._i=[];a.init=function(b,c,f){function d(a,b){var c=b.split(".");2==c.length&&(a=a[c[0]],b=c[1]);a[b]=function(){a.push([b].concat(Array.prototype.slice.call(arguments,0)))}}var g=a;"undefined"!==
-typeof f?g=a[f]=[]:f="mixpanel";g.people=g.people||[];h="disable track track_pageview track_links track_forms register register_once unregister identify name_tag set_config people.set people.increment".split(" ");for(e=0;e<h.length;e++)d(g,h[e]);a._i.push([b,c,f])};a.__SV=1.1})(document,window.mixpanel||[]);
-mixpanel.init("be69358eba9f2f837612946a3e8461db");</script><!-- end Mixpanel -->
-    <script type="text/javascript"> <!-- google analytics -->
+    <!-- less -->
+    <link rel="stylesheet/less" type="text/css" href="/less/styles.less" />
+    <script src="/javascripts/less-1.3.0.min.js" type="text/javascript"></script>
+
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=1080" />
+    <script type="text/javascript">
       var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-33799138-1']);
+      _gaq.push(['_setAccount', 'UA-34184133-1']);
       _gaq.push(['_trackPageview']);
+      
       (function() {
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     </script>
-</head>
-<body>
-    <div id="wrapper">
-        <div id="content">
-            {block:Posts}            
-                <div class="post">
-                    {block:Photo}
-                      <div class="titlebox phototitlebox">
-                        {block:Caption}<div class="title">{Caption}</div>{/block:Caption}
-                        {block:Date}
-                          <div class="date">
-                            <a href="{Permalink}">
-                              {TimeAgo}
-                            </a>
-                          </div>
-                          {/block:Date}
-                        
-                      </div>
-                      <p>
-                      {LinkOpenTag}<img posturl="{ShortURL}" src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}
-                      </p>
-                    {/block:Photo}
-                    {block:Text}
-                        <div class="titlebox">
-                          {block:Title}<div class="title">{Title}</div>{/block:Title}
-                          {block:Date}
-                          <div class="date">
-                            <a href="{Permalink}">
-                              {TimeAgo}
-                            </a>
-                          </div>
-                          {/block:Date}
-                        </div>
-                        <div class="clear"></div>
-                        <div class="copy textpost" posturl="{ShortURL}">{Body}</div>
-                    {/block:Text}
-                        <div class="bottom">
-                          <div style="font-size: 10px; text-align: left;">
-                            <a class="dsq-comment-count" href="{Permalink}#disqus_thread">
-                              Comments</a>
-                          </div>
-                        </div>
-                </div>
-                        <!-- disqus -->
-                <script type="text/javascript">var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>{block:Permalink}<div id="disqus_thread"></div>
-                <script type="text/javascript">
-                  /**
-                  * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
-                  */
-                  (function() {
-                  var dsq = document.createElement('script');
-                  dsq.type = 'text/javascript'; dsq.async = true;
-                  dsq.src = 'http://isthatit.disqus.com/embed.js';
-                  (document.getElementsByTagName('head')[0]
-                    || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                  })();
-                </script>
-                <noscript>Please enable JavaScript to view the
-                  <a href="http://disqus.com/?ref_noscript=isthatit">comments powered by Disqus.</a>
-                </noscript>
-                <a href="http://disqus.com" class="dsq-brlink">
-                  blog comments powered by <span class="logo-disqus">Disqus</span></a>
-                {/block:Permalink}<script type="text/javascript">
-                  var disqus_shortname = 'isthatit';
-                  (function () {
-                  var s = document.createElement('script'); s.async = true;
-                  s.src = 'http://isthatit.disqus.com/count.js';
-                  (document.getElementsByTagName('HEAD')[0]
-                    || document.getElementsByTagName('BODY')[0]).appendChild(s);
-                  }());
-                </script>
-            {/block:Posts}
+    
+    {block:IndexPage}
+    <script type="text/javascript"
+            src="http://assets.tumblr.com/javascript/tumblelog.js"></script>
+    {/block:IndexPage}
+  </head>
 
-            {block:Pagination}
-                <div id="navigation">
-                    {block:PreviousPage}<a href="{PreviousPage}">&larr; previous page</a>{/block:PreviousPage}
-                    {block:NextPage}<a href="{NextPage}">next page &rarr;</a>{/block:NextPage}
-                </div>
-            {/block:Pagination}
-        </div>
-        <div id="sidebar">
-            <div id="top">
-              <div id="logo">
-                <a href="http://isthatitblog.tumblr.com"><img src="http://garaemon.github.com/isthatitblogtheme/img/isthatit_logo.png"></img></a>
+  <body>
+    <div id="container">
+      <div id="header" class="centered">
+        <a href="/">
+          <img src="/img/logo_for_web.png" alt="{Title}" />
+        </a>
+      </div>
+      <div id="top">
+        {block:ifNotShowDescriptionUnderLinks}
+          {block:ifShowDescriptionOverLinks}
+            {block:Description}
+              <div id="description">
+                {Description}
               </div>
-                <div id="description">{Description}</div>
-            </div>
-            <div id="bottom"></div>
+            {/block:Description}
+          {/block:ifShowDescriptionOverLinks}
+       {/block:ifNotShowDescriptionUnderLinks}
+        <div id="top-nav">
+          {block:ifShowSearchBar}
+          <form action="/search" method="get" name="search-form" id="search">
+            <input type="text" name="q" value="{lang:Search}" />
+          </form>
+          {/block:ifShowSearchBar}
         </div>
-        <div class="clear"></div>
-    </div>
-        
-    {block:IfDisqusShortname}
-        <script type="text/javascript">
-            //<![CDATA[
-            (function() {
-                var links = document.getElementsByTagName('a');
-                var query = '?';
-                for(var i = 0; i < links.length; i++) {
-                    if(links[i].href.indexOf('#disqus_thread') >= 0) {
-                        query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-                    }
-                }
-                document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/get_num_replies.js' + query + '"></' + 'script>');
-            })();
-            //]]>
-        </script>
-    {/block:IfDisqusShortname}
-</body>
+
+        {block:ifShowDescriptionUnderLinks}{block:Description}
+        <div id="description">
+          {Description}
+        </div>
+        {/block:Description}{/block:ifShowDescriptionUnderLinks}
+      </div>
+      
+      <div id="content" class="{block:ifBorderAroundIndexPosts}border-index-post{/block:ifBorderAroundIndexPosts} {block:ifBorderAroundPermalinkContent}border-perm-content{/block:ifBorderAroundPermalinkContent} {block:ifBorderAroundPermalinkMeta}border-perm-meta{/block:ifBorderAroundPermalinkMeta}">
+        {block:Posts}
+        <div {block:Date}id="post-{PostID}"{/block:Date} class="post {block:Text}text {/block:Text}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Answer}answer {/block:Answer}{block:Photo}photo not-{/block:Photo}{block:Photoset}photoset not-{/block:Photoset}{block:Audio}audio not-{/block:Audio}{block:Video}video not-{/block:Video}wordy {block:Date}not-{/block:Date}page {block:IndexPage}{block:ifFadeInFirstPage}invisible{/block:ifFadeInFirstPage} {block:Photo}{block:Post7}{block:ifLarger7thPhoto}wide{/block:ifLarger7thPhoto}{/block:Post7}{block:Post14}{block:ifLarger14thPhoto}wide{/block:ifLarger14thPhoto}{/block:Post14}{/block:Photo}{block:Video}wide{/block:Video} transition-opacity{/block:IndexPage}">
+          {block:IndexPage}{block:ifMobileCompatibility}<a href="{Permalink}" class="mobile-shield"></a>{/block:ifMobileCompatibility}{/block:IndexPage}
+          <div class="content-block left-block the-border">
+            <div class="post-content the-border">
+              {block:Text}
+              {block:Title}<h2 class="title">{Title}</h2>{/block:Title}
+              {body}
+              {/block:Text}
+
+              {block:Photo}
+              <div class="the-photo">
+                {block:IndexPage}
+                {LinkOpenTag}
+                <img src="{PhotoURL-400}" alt="{PhotoAlt}" />
+                {LinkCloseTag}
+                {/block:IndexPage}
+                {block:PermalinkPage}{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}{/block:PermalinkPage}
+              </div>
+              {/block:Photo}
+
+              {block:Photoset} <!-- need to check -->
+              <div class="the-photoset layout{PhotosetLayout}">
+                {block:IndexPage}{Photoset-250}{/block:IndexPage}
+                {block:PermalinkPage}<!--
+                                       -->{block:Photos}<span class="photoset-image">
+                  <a href="{PhotoURL-HighRes}"><img src="{PhotoURL-500}" /></a>
+                  {block:Caption}<span class="caption-outer">
+                    <span class="caption-inner">{Caption}</span>
+                  </span>{/block:Caption}
+                </span>{/block:Photos}<!--
+                                        -->{/block:PermalinkPage}
+              </div>
+              {/block:Photoset}
+
+              {block:Quote}
+              <h2 class="the-quote">{Quote}</h2>
+              {block:Source}<div class="quote-source">&#8212; {Source}</div>{/block:Source}
+              {/block:Quote}
+
+              {block:Link}
+              <h2 class="the-link"><a href="{URL}" {Target}>{Name}</a></h2>
+              {block:Description}{Description}{/block:Description}
+              {/block:Link}
+
+              {block:Chat}
+              {block:Title}<h2 class="title">{Title}</h2>{/block:Title}
+              <ul class="the-chat">
+                {block:Lines}<li class="{Alt}">{block:Label}<span class="label">{Label}</span>{/block:Label} {Line}</li>{/block:Lines}
+              </ul>
+              {/block:Chat}
+
+              {block:Audio}
+              <div class="album-art">
+                <div class="audio-circle"><div class="the-audio hideflash">{AudioPlayerBlack}</div></div>
+                {block:AlbumArt}<img src="{AlbumArtURL}" class="the-album-art" alt="" />{/block:AlbumArt}
+              </div>
+              {block:PermalinkPage}
+              <ul class="audio-meta">
+                {block:TrackName}<li class="trackname">{TrackName}</li>{/block:TrackName}
+                {block:Artist}<li class="artist">{Artist}</li>{/block:Artist}
+                {block:Album}<li class="album">{Album}</li>{/block:Album}
+              </ul>
+              {/block:PermalinkPage}
+              {/block:Audio}
+
+              {block:Video}
+              <div class="the-video hideflash">{Video-500}</div>
+              {/block:Video}
+
+              {block:Answer}
+              <h2 class="asked"><span class="asker">{lang:Asker asked}</span>: <span class="question">{Question}</span></h2>
+              {Answer}
+              {/block:Answer}
+
+              {block:PermalinkPage}{block:Caption}<div class="caption">{Caption}</div>{/block:Caption}{/block:PermalinkPage}
+            </div> <!-- /.post-content -->
+          </div> <!-- /.left-block -->
+
+          {block:Date}
+          <div class="content-block right-block">
+            <div class="meta the-border transition-height">
+              <a href="{Permalink}" title="{lang:Permalink}" class="permalink">{NoteCount} &hearts; {block:IndexPage}{block:ifShowDateOnIndexPage} <span class="s">&#47;</span> {block:ifContextualTimeOnIndexPage}{TimeAgo}{/block:ifContextualTimeOnIndexPage}{block:ifNotContextualTimeOnIndexPage}{block:ifEuropeanTimeFormat}{DayOfMonth} {Month}, {Year}{/block:ifEuropeanTimeFormat}{block:ifNotEuropeanTimeFormat}{Month} {DayOfMonth}, {Year}{/block:ifNotEuropeanTimeFormat}{/block:ifNotContextualTimeOnIndexPage}{/block:ifShowDateOnIndexPage}{/block:IndexPage}</a>
+              {block:PermalinkPage} <span class="s">&#47;</span> {block:ifEuropeanTimeFormat}{DayOfMonth} {Month}, {Year}{/block:ifEuropeanTimeFormat}{block:ifNotEuropeanTimeFormat}{Month} {DayOfMonth}, {Year}{/block:ifNotEuropeanTimeFormat}
+              {block:ContentSource} <span class="s">&#47;</span> <span class="source-label">{lang:Source}:</span> <a href="{SourceURL}">{SourceTitle}</a>{/block:ContentSource}
+              {block:RebloggedFrom}<!--{lang:Reblogged from ReblogParentName}-->{/block:RebloggedFrom}
+
+              {block:HasTags}
+              <ul class="tagged">
+                <li class="tag-label">{lang:Tagged}:</li>
+                {block:Tags}<li class="tag"><a href="{TagURL}">{Tag}</a><span>, </span></li>{/block:Tags}
+              </ul>
+              {/block:HasTags}{/block:PermalinkPage}
+            </div>
+
+            {block:ifShowNotesOnPermalinkPage}{block:PostNotes}{PostNotes}{/block:PostNotes}{/block:ifShowNotesOnPermalinkPage}
+          </div>
+          {/block:Date}
+        </div> <!-- /.post -->
+        {/block:Posts}
+
+        {block:NoSearchResults}
+        <div id="no-results" class="post text wordy page opaque">
+          <div class="left-block the-border">
+            <div class="post-content">
+              <h2 class="title">{lang:No posts found}</h2>
+              <p>{lang:Sorry no search results found}</p>
+            </div>
+          </div>
+        </div>
+        {/block:NoSearchResults}
+      </div> <!-- /#content -->
+
+      {block:Pagination}
+      <ul id="foot-nav">
+        {block:PreviousPage}<li class="prev"><a href="{PreviousPage}">&larr; {lang:Newer}</a></li>{/block:PreviousPage}
+        {block:JumpPagination length="5"}
+        {block:CurrentPage}<li class="current-page"><span>{PageNumber}</span></li>{/block:CurrentPage}
+        {block:JumpPage}<li class="jump-page"><a href="{URL}">{PageNumber}</a></li>{/block:JumpPage}
+        {/block:JumpPagination}
+        {block:NextPage}<li class="next"><a href="{NextPage}">{lang:Older} &rarr;</a></li>{/block:NextPage}
+      </ul>
+      {/block:Pagination}
+      {block:ifEnablePermalinkPagination}{block:PermalinkPagination}
+      <ul id="foot-nav">
+        {block:NextPost}<li class="next"><a href="{NextPost}">&larr; {lang:Newer}</a></li>{/block:NextPost}
+        {block:PreviousPost}<li class="prev"><span class="s"> / </span><a href="{PreviousPost}">{lang:Older} &rarr;</a></li>{/block:PreviousPost}
+      </ul>
+      {/block:PermalinkPagination}{/block:ifEnablePermalinkPagination}
+    </div> <!-- /#container -->
+
+    {block:ifInfiniteScroll}{block:IndexPage}<div id="loading"></div>{/block:IndexPage}{/block:ifInfiniteScroll}
+
+    <!-- javascripts -->
+    <script type="text/javascript" src="/javascripts/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="/javascripts/kicksontheroad.js"></script>
+  </body>
 </html>
+

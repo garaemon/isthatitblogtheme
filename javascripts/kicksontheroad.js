@@ -1,0 +1,4 @@
+// kicksontheroad.js
+
+$(function() {
+});
