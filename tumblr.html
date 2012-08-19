@@ -12,6 +12,7 @@
     {block:Description}
     <meta name="description" content="{MetaDescription}" />
     {/block:Description}
+    <meta name="keywords" content="new balance,newbalance,shoes,vans,nike,vans era,snap,streetsnap">
     <link rel="shortcut icon" href="{Favicon}" />
     <link rel="alternate" type="application/rss+xml" href="{RSS}" />
     <!-- less -->
@@ -66,7 +67,7 @@
     <div id="wrapper">
       <div id="titlebar" class="center">
         <div id="title-wrapper">
-          <a href="/"><img src="/img/logo_for_web.png" /></a>
+          <a href="/"><img src="//garaemon.github.com/isthatitblogtheme/img/logo_for_web.png" /></a>
           <div class="fb-like" data-href="https://www.facebook.com/WhatsThatNice" data-send="false" data-layout="button_count" data-width="150" data-show-faces="false"></div>
         </div>
         <div id="link-wrapper">
@@ -96,8 +97,8 @@
       </div>
 
       <div id="main-wrapper">
-        {block:Posts}
         <div id="container">
+        {block:Posts}
           {block:Photo}
           <div class="snapbox">
             <a href="/" class="imglink">
@@ -120,8 +121,8 @@
 
           <!-- other type is not supported yet -->
           
-        </div>
         {/block:Posts}
+        </div>
       </div>
 
       {block:Pagination}
@@ -174,6 +175,13 @@
       document.write('<script src="' + js + '"></' + 'script>');
     </script>
     <script type="text/javascript">
+      var js = "/javascripts/jquery.masonry.min.js";
+      if (!(location.href.indexOf("http://localhost") === 0)) {
+         js = "http://garaemon.github.com/isthatitblogtheme" + js;
+      }
+      document.write('<script src="' + js + '"></' + 'script>');
+    </script>
+    <script type="text/javascript">
       var js = "/javascripts/kicksontheroad.js";
       if (!(location.href.indexOf("http://localhost") === 0)) {
          js = "http://garaemon.github.com/isthatitblogtheme" + js;
@@ -182,4 +190,3 @@
     </script>
    </body>
 </html>
-

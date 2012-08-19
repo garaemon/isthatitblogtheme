@@ -15,6 +15,14 @@ $(function() {
     return str.match(suffix+"$") == suffix;
   };
   
+  $("#container").imagesLoaded(function() {
+    $(this).masonry({
+      columnwidth: 320,
+      isAnimated: false,
+      itemSelector: ".snapbox"
+    });
+  });
+  
   $(".snapbox").each(function() {
     var $snapbox = $(this);
     $(this).find("img").imagesLoaded(function() {
@@ -27,7 +35,6 @@ $(function() {
           // change the link
           $snapbox.find(".imglink").attr("href", "/tagged/" + tag);
         }
-        
       });
       var $contenthover = $('<div class="contenthover center">'
                             + name.toUpperCase() + '</div>');
@@ -37,6 +44,7 @@ $(function() {
       $(this).contenthover({
         effect: "show"
       });
+      //$("#container").masonry("appended", $snapbox);
     });
   });
 });
