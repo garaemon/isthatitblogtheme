@@ -120,31 +120,14 @@
           {/block:Photo}
           <!-- other type is not supported yet -->
         {/block:Posts}
+        {block:IndexPage}
+          <div class = "autopagerize_page_element" ></div>
+          <!-- <div id="loading"> -->
+        {/block:IndexPage}
         </div>
       </div>
-
-      {block:Pagination}
-      <ul id="foot-nav">
-        {block:PreviousPage}<li class="prev"><a href="{PreviousPage}">&larr; {lang:Newer}</a></li>{/block:PreviousPage}
-        {block:JumpPagination length="5"}
-        {block:CurrentPage}<li class="current-page"><span>{PageNumber}</span></li>{/block:CurrentPage}
-        {block:JumpPage}<li class="jump-page"><a href="{URL}">{PageNumber}</a></li>{/block:JumpPage}
-        {/block:JumpPagination}
-        {block:NextPage}<li class="next"><a href="{NextPage}">{lang:Older} &rarr;</a></li>{/block:NextPage}
-      </ul>
-      {/block:Pagination}
-      {block:ifEnablePermalinkPagination}{block:PermalinkPagination}
-      <ul id="foot-nav">
-        {block:NextPost}<li class="next"><a href="{NextPost}">&larr; {lang:Newer}</a></li>{/block:NextPost}
-        {block:PreviousPost}<li class="prev"><span class="s"> / </span><a href="{PreviousPost}">{lang:Older} &rarr;</a></li>{/block:PreviousPost}
-      </ul>
-      {/block:PermalinkPagination}{/block:ifEnablePermalinkPagination}
     </div> <!-- /#container -->
-
-    {block:ifInfiniteScroll}{block:IndexPage}
-    <div id="loading">
-    </div>{/block:IndexPage}{/block:ifInfiniteScroll}
-
+    <script type="text/javascript" src="http://codysherman.com/tools/infinite-scrolling/code"></script>
     <!-- javascripts -->
     <script type="text/javascript">
       var js = "/javascripts/jquery-1.7.2.min.js";
