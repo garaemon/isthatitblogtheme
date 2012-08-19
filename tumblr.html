@@ -119,10 +119,9 @@
           </div>
           {/block:Photo}
           <!-- other type is not supported yet -->
-        {/block:Posts}
+          {/block:Posts}
         {block:IndexPage}
-          <div class = "autopagerize_page_element" ></div>
-          <!-- <div id="loading"> -->
+          <div id="loading">
         {/block:IndexPage}
         </div>
       </div>
@@ -138,6 +137,13 @@
     </script>
     <script type="text/javascript">
       var js = "/javascripts/jquery.imagesloaded.min.js";
+      if (!(location.href.indexOf("http://localhost") === 0)) {
+         js = "http://garaemon.github.com/isthatitblogtheme" + js;
+      }
+      document.write('<script src="' + js + '"></' + 'script>');
+    </script>
+    <script type="text/javascript">
+      var js = "/javascripts/jquery.bottom-1.0.js";
       if (!(location.href.indexOf("http://localhost") === 0)) {
          js = "http://garaemon.github.com/isthatitblogtheme" + js;
       }

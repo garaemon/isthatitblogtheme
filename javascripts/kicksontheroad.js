@@ -47,4 +47,37 @@ $(function() {
       //$("#container").masonry("appended", $snapbox);
     });
   });
+
+  if ($.isMobile()) {
+    $(window).bottom({
+      proximity: 0.3
+    });
+  }
+  else {
+    $(window).bottom();
+  }
+
+  function loadNextPage(id) {
+    $.ajax({
+      type: "GET",
+      url: "/page/" + (id + 1),
+      error: function() {
+      },
+      success: function(data) {
+        console.log(data);
+      }
+    });
+  };
+  
+  var bottom_lock = false;
+  var loaded_index = 0;
+  $(window).bind("bottom", function() {
+    if (!bottom_lock) {
+      console.log("load");
+      bottom_lock = true;
+      loadNextPage(loaded_index + 1);
+    }
+    
+  });
+  
 });
