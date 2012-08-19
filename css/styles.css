@@ -1,0 +1,351 @@
+#wrapper {
+  font-family: HelveticaNeue-Light, Helvetica Neue Light, Helvetica Neue, Helvetica, arial, freesans, clean, sans-serif;
+  width: 100%;
+  margin: 0 auto;
+}
+#wrapper .center {
+  text-align: center;
+}
+#wrapper #invitation-request-wrapper {
+  background-color: white;
+  padding-top: 100px;
+}
+#wrapper #invitation-request-wrapper h1 {
+  padding-bottom: 50px;
+}
+#wrapper .alertmessage {
+  color: #bd362f;
+}
+#wrapper #confirmation-request-wrapper {
+  background-color: white;
+  padding-top: 100px;
+}
+#wrapper #confirmation-request-wrapper li {
+  height: 40px;
+  line-height: 40px;
+}
+#wrapper #signup-wrapper {
+  background-color: white;
+  padding-top: 100px;
+}
+#wrapper #signup-wrapper h1 {
+  padding-bottom: 40px;
+}
+#wrapper #signup-wrapper .button-wrapper {
+  padding-top: 30px;
+}
+#wrapper #add-snap-wrapper {
+  background-color: white;
+  padding-top: 100px;
+}
+#wrapper #add-snap-wrapper h1 {
+  padding-bottom: 40px;
+}
+#wrapper #add-snap-wrapper .button-wrapper {
+  padding-top: 30px;
+}
+#wrapper #snaps-wrapper {
+  background-color: white;
+  padding-top: 100px;
+}
+#wrapper #snaps-wrapper li {
+  height: 140px;
+}
+#wrapper #snaps-wrapper li .btn {
+  margin-right: 20px;
+}
+#wrapper #snaps-wrapper li .tagsbox {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: inline;
+}
+#wrapper #snaps-wrapper li .tagsbox .tag {
+  display: inline;
+}
+#wrapper #snaps-wrapper li form {
+  display: inline;
+}
+#wrapper #snaps-wrapper li form input {
+  width: 70px;
+}
+#wrapper #snaps-wrapper img {
+  max-width: 100px;
+  max-height: 100px;
+}
+#wrapper #refresh-snaps-wrapper {
+  background-color: white;
+  padding-top: 100px;
+}
+#wrapper #refresh-snaps-wrapper h1 {
+  padding-bottom: 40px;
+}
+#wrapper #refresh-snaps-wrapper #csv {
+  text-align: left;
+  width: 600px;
+}
+#wrapper #refresh-snaps-wrapper .button-wrapper {
+  padding-top: 40px;
+}
+#wrapper #titlebar {
+  height: 140px;
+  margin-left: 10px;
+  width: 940px;
+  border-bottom: solid 1px #b3b3b3;
+  background-color: white;
+}
+#wrapper #titlebar a {
+  color: black;
+  text-decoration: none;
+}
+#wrapper #titlebar #title-wrapper img {
+  margin: 0 auto;
+  padding-top: 53px;
+}
+#wrapper #titlebar #title-wrapper .fb-like {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#wrapper #titlebar #link-wrapper {
+  padding-top: 27px;
+}
+#wrapper #titlebar #link-wrapper ul {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+#wrapper #titlebar #link-wrapper ul li {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#wrapper #titlebar #link-wrapper ul li .left {
+  padding-right: 10px;
+}
+#wrapper #titlebar #link-wrapper ul li .right {
+  padding-left: 10px;
+}
+#wrapper #titlebar #link-wrapper ul li .middle {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#wrapper #titlebar #link-wrapper ul li .red {
+  color: red;
+}
+#wrapper #titlebar #link-wrapper ul li span.gray {
+  letter-spacing: 2px;
+  text-align: center;
+  background-color: white;
+  text-align: center;
+  font-family: Times New Roman;
+  font-size: 13px;
+  float: left;
+  color: #ccc;
+}
+#wrapper #titlebar #link-wrapper ul li a {
+  letter-spacing: 2px;
+  text-align: center;
+  background-color: white;
+  text-align: center;
+  font-family: Times New Roman;
+  font-size: 13px;
+  float: left;
+}
+#wrapper #main-wrapper {
+  background-color: white;
+}
+#wrapper #main-wrapper #adspace {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+#wrapper #main-wrapper .contenthover {
+  width: 300px;
+  color: white;
+  font: HelveticaNeue-Light, Helvetica Neue Light, Helvetica Neue, Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: black;
+  opacity: 0.7;
+}
+#wrapper #main-wrapper .snapbox {
+  width: 300px;
+  margin: 0px;
+  float: left;
+  padding: 10px;
+}
+#wrapper #main-wrapper .snapbox img {
+  width: 300px;
+}
+#wrapper #main-wrapper img {
+  border: 0;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+#wrapper #snap-wrapper {
+  padding-left: 10px;
+}
+#wrapper #snap-wrapper .captionbox {
+  height: 80px;
+  color: black;
+}
+#wrapper #snap-wrapper .captionbox h1 {
+  display: inline;
+  line-height: 80px;
+  font-size: 18pt;
+  font-family: Times New Roman;
+  font-weight: normal;
+}
+#wrapper #snap-wrapper .captionbox a {
+  text-decoration: none;
+}
+#wrapper #snap-wrapper .captionbox h2 {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-left: 20px;
+  background-color: #e6e6e6;
+  color: red;
+  display: inline;
+  font-size: 14pt;
+  font-family: Times New Roman;
+  font-weight: normal;
+}
+#wrapper #snap-wrapper #contentbox {
+  float: left;
+  width: 500px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+#wrapper #snap-wrapper #contentbox a {
+  display: table-cell;
+  vertical-align: middle;
+}
+#wrapper #snap-wrapper #contentbox img {
+  width: 500px;
+  display: table-cell;
+  vertical-align: middle;
+  padding-bottom: 20px;
+}
+#wrapper #snap-wrapper #contentbox #sns-buttons .fb-like {
+  top: -2px;
+}
+#wrapper #snap-wrapper #side-snaps-box {
+  float: right;
+  width: 430px;
+}
+#wrapper #snap-wrapper #side-snaps-box .side-snap {
+  width: 120px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+#wrapper #snap-wrapper #side-snaps-box .side-snap img {
+  padding-right: 0px;
+  width: 120px;
+}
+#wrapper #snap-wrapper #side-snaps-box .side-snap .contenthover {
+  width: 120px;
+  background-color: black;
+  opacity: 0.7;
+}
+#wrapper #under-construction-wrapper {
+  padding-top: 50px;
+}
+#wrapper #about-wrapper #heading-wrapper {
+  padding-bottom: 30px;
+}
+#wrapper #about-wrapper #heading-wrapper #heading-wrapper-content h1 {
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  font-size: 18pt;
+  font-family: Times New Roman;
+  font-weight: lighter;
+}
+#wrapper #about-wrapper #heading-wrapper #heading-wrapper-content .heading-image img {
+  width: 960px;
+}
+#wrapper #about-wrapper #description {
+  float: left;
+  width: 640px;
+  letter-spacing: 1px;
+}
+#wrapper #about-wrapper #description #about-content p {
+  font-size: 13pt;
+  font-family: Times New Roman;
+}
+#wrapper #about-wrapper #description h2 {
+  font-family: Times New Roman;
+  font-weight: normal;
+  font-size: 18pt;
+  padding-bottom: 10px;
+}
+#wrapper #about-wrapper #description #team {
+  padding-bottom: 100px;
+}
+#wrapper #about-wrapper #description #team dl {
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+#wrapper #about-wrapper #description #team dl dt {
+  font-family: Times New Roman;
+  font-weight: bold;
+  font-size: 13pt;
+}
+#wrapper #about-wrapper #description #team dl dd {
+  padding-left: 0px;
+  margin-left: 0px;
+  padding-bottom: 10px;
+  font-family: Times New Roman;
+  font-size: 13pt;
+}
+#wrapper #about-wrapper #description #fbcontent {
+  float: right;
+}
+#wrapper #fotter {
+  clear: both;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: solid 1px #b3b3b3;
+  letter-spacing: 1px;
+  font-size: 10pt;
+  padding-bottom: 100px;
+  color: #b3b3b3;
+}
+#wrapper #fotter #left-fotter {
+  float: left;
+}
+#wrapper #fotter #right-fotter {
+  float: right;
+}
+#wrapper #fotter #right-fotter a {
+  color: #b3b3b3;
+}
+#wrapper #featured-wrapper {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#wrapper #featured-wrapper h1 {
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  font-size: 18pt;
+  font-family: Times New Roman;
+  font-weight: lighter;
+}
+#wrapper #featured-wrapper ul {
+  list-style: none;
+  margin: 0;
+}
+#wrapper #featured-wrapper ul li {
+  padding-bottom: 20px;
+}
+.hidden {
+  display: none;
+}
+body {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+  background-color: white;
+}
