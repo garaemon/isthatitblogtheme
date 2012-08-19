@@ -118,9 +118,7 @@
             </div>
           </div>
           {/block:Photo}
-
           <!-- other type is not supported yet -->
-          
         {/block:Posts}
         </div>
       </div>
@@ -143,7 +141,9 @@
       {/block:PermalinkPagination}{/block:ifEnablePermalinkPagination}
     </div> <!-- /#container -->
 
-    {block:ifInfiniteScroll}{block:IndexPage}<div id="loading"></div>{/block:IndexPage}{/block:ifInfiniteScroll}
+    {block:ifInfiniteScroll}{block:IndexPage}
+    <div id="loading">
+    </div>{/block:IndexPage}{/block:ifInfiniteScroll}
 
     <!-- javascripts -->
     <script type="text/javascript">
