@@ -345,6 +345,9 @@
 #wrapper #featured-wrapper ul li {
   padding-bottom: 20px;
 }
+#wrapper .custompage p {
+  display: none;
+}
 .hidden {
   display: none;
 }
