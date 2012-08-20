@@ -36,7 +36,7 @@ $(function() {
         if (startsWith(tag, "name:")) {
           name = tag.slice(5);
           // change the link
-          $snapbox.find(".imglink").attr("href", "/tagged/" + tag);
+          //$snapbox.find(".imglink").attr("href", "/tagged/" + tag);
         }
       });
       var $contenthover = $('<div class="contenthover center">'
