@@ -178,7 +178,7 @@ $(function() {
   };
   
   function snapMain() {
-    $(".custompage").html("");  // clear
+    $(".custompage").remove();
     var params = getParameters();
     var photoURL = params.photoURL;
     var name = decodeURI(params.name);
@@ -198,7 +198,6 @@ $(function() {
       tag = "name:" + name;
     if (tag) {
       console.log("using " + tag);
-      
       loadSideSnaps(tag, 1);
     }
   };
