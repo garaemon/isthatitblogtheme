@@ -68,7 +68,7 @@ $(function() {
     console.log("access to /page/" + (id + 1));
     $.ajax({
       type: "GET",
-      url: "/page/" + (id + 1),
+      url: location.pathname + "/page/" + (id + 1),
       error: function() {
         alert("network does not work, sorry");
       },
