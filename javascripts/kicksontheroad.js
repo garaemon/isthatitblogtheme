@@ -82,7 +82,10 @@ $(function() {
           console.log("images are loaded at " + loaded_index);
           bottom_lock = true;
         });
-      }
+        $snapboxes.each(function() {
+          arrangeSnapbox($(this));
+        });
+
     });
   };
   
