@@ -329,6 +329,10 @@
   padding-left: 10px;
   padding-right: 10px;
 }
+#wrapper #featured-wrapper img {
+  padding: 0;
+  margin: 0;
+}
 #wrapper #featured-wrapper h1 {
   height: 80px;
   line-height: 80px;
