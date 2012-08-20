@@ -39,6 +39,12 @@ $(function() {
           $snapbox.find(".imglink")
             .attr("href", $snapbox.find(".imglink").attr("href") + "&name="+ name);
         }
+        if (startsWith(tag, "tag:")) {
+          var tag_feature = tag.slice(5);
+          // change the link
+          $snapbox.find(".imglink")
+            .attr("href", $snapbox.find(".imglink").attr("href") + "&tag="+ tag_feature);
+        }
       });
       var $contenthover = $('<div class="contenthover center">'
                             + name.toUpperCase() + '</div>');
@@ -127,6 +133,31 @@ $(function() {
     }
     return splitted_params;
   };
+
+  function loadSideSnaps(tag, index) {
+    $.ajax({
+      type: "GET",
+      url: "/tagged/" + tag,
+      success: function(data) {
+        var $html = $(data);
+        console.log("success to fetch the next page");
+        var $snapboxes = $html.find(".snapbox");
+        if ($snapboxes.length > 0) {
+          $("#side-snaps").append($snapboxes);
+          $snapboxes.each(function() {
+            var $snapbox = $(this);
+            $snapbox.imagesLoaded(function() {
+              $("#side-snaps").masonry("appended", $snapbox);
+            });
+          });
+                          
+        }
+      },
+      error: function() {
+        alert("sorry, network does not work");
+      }
+    });
+  };
   
   function snapMain() {
     var params = getParameters();
@@ -140,7 +171,20 @@ $(function() {
     }
     $img.addClass("snapimage");
     $("#snap-wrapper #contentbox").prepend($img);
-    
+    // load side images
+    var tag = null;
+    if (params.tag)
+      tag = "tag:" + params.tag;
+    else if (name)
+      tag = "name:" + name;
+    if (tag) {
+      $(this).masonry({
+        columnwidth: 140,
+        isAnimated: false,
+        itemSelector: ".snapbox"
+      });
+      loadSideSnaps(tag, 1);
+    }
   };
   
   // /snap?photoURL=...
