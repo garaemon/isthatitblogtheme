@@ -127,21 +127,28 @@
           {/block:Posts}
         </div> <!-- #container -->
       </div> <!-- #main-wrapper -->
-      <!-- /snap -->
+      
       {block:IndexPage}
       <div class="hidden">
-      {/block:IndexPage}
-      <div id="snap-wrapper">
-        <div class="captionbox">
+        {/block:IndexPage}
+        <!-- custom page -->
+        {block:Posts}
+        <div class="custompage">
+          {Body}
         </div>
-        <div id="contentbox">
-          
-        </div> <!-- #contentbox -->
-        <div id="side-snaps-box">
-          
-        </div> <!-- #side-snaps-box -->
-      </div>   <!-- #snap-wrapper -->
-      {block:IndexPage}
+        {/block:Posts}
+        <!-- /snap -->
+        <div id="snap-wrapper">
+          <div class="captionbox">
+          </div>
+          <div id="contentbox">
+            
+          </div> <!-- #contentbox -->
+          <div id="side-snaps-box">
+            
+          </div> <!-- #side-snaps-box -->
+        </div>   <!-- #snap-wrapper -->
+        {block:IndexPage}
       </div>
       {/block:IndexPage}
       {block:IndexPage}
