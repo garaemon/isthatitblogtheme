@@ -183,7 +183,7 @@ $(function() {
     var name = decodeURI(params.name);
     var $img = $('<img src="' + photoURL + '"/>');
     if (name && name != "undefined") {
-      var $caption = $('<h1>' + name + '</h1>'
+      var $caption = $('<h1>' + name.toUpperCase() + '</h1>'
                        + '<a href="/store" target="_blank"><h2>SHOP NOW></h2></a>');
       $("#snap-wrapper .captionbox").prepend($caption);
     }
