@@ -23,11 +23,11 @@ $(function() {
     });
     $(".snapbox").each(function() {
       var $snapbox = $(this);
-      arrangeSnapbox($snapbox, true);
+      arrangeSnapbox($snapbox, true, "#container");
     });
   });
 
-  function arrangeSnapbox($snapbox, no_masonry) {
+  function arrangeSnapbox($snapbox, no_masonry, container) {
     $snapbox.find("img").imagesLoaded(function() {
       var name = "";
       $snapbox.find(".tag").each(function() { //parse names
@@ -55,7 +55,7 @@ $(function() {
         effect: "show"
       });
       if (!no_masonry)
-        $("#container").masonry("appended", $snapbox);
+        $(container).masonry("appended", $snapbox);
     });
  };
   
@@ -98,7 +98,7 @@ $(function() {
             var $snapbox = $(this);
             $snapbox.imagesLoaded(function() {
               console.log("loaded");
-              arrangeSnapbox($snapbox);
+              arrangeSnapbox($snapbox, false, "#container");
             });
           });
         }
@@ -143,6 +143,7 @@ $(function() {
         var $html = $(data);
         console.log("success to fetch the next page");
         var $snapboxes = $html.find(".snapbox");
+        
         if ($snapboxes.length > 0) {
           $("#side-snaps-box").append($snapboxes);
           if (index == 1) {
@@ -153,13 +154,15 @@ $(function() {
                 itemSelector: ".snapbox"
               });
             });
+            $snapboxes.each(function() {
+              var $snapbox = $(this);
+              arrangeSnapbox($snapbox, true, "#side-snapx-box");
+            });
           }
           else {
             $snapboxes.each(function() {
               var $snapbox = $(this);
-              $snapbox.imagesLoaded(function() {
-                $("#side-snaps-box").masonry("appended", $snapbox);
-              });
+              arrangeSnapbox($snapbox, false, "#side-snapx-box");
             });
           }
         }
