@@ -85,7 +85,7 @@ $(function() {
         $snapboxes.each(function() {
           arrangeSnapbox($(this));
         });
-
+      }
     });
   };
   
