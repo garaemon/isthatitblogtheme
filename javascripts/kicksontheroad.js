@@ -50,7 +50,7 @@ $(function() {
   $(".snapbox").each(function() {
     var $snapbox = $(this);
     arrangeSnapbox($snapbox);
-                   
+  });
   if ($.isMobile()) {
     $(window).bottom({
       proximity: 0.3
