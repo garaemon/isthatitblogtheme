@@ -21,6 +21,10 @@ $(function() {
       isAnimated: false,
       itemSelector: ".snapbox"
     });
+    $(".snapbox").each(function() {
+      var $snapbox = $(this);
+      arrangeSnapbox($snapbox);
+    });
   });
 
   function arrangeSnapbox($snapbox) {
@@ -46,11 +50,6 @@ $(function() {
       $("#container").masonry("appended", $snapbox);
     });
  };
-  
-  $(".snapbox").each(function() {
-    var $snapbox = $(this);
-    arrangeSnapbox($snapbox);
-  });
   
   if($("#loading").length > 0) { //only support in index page
     if ($.isMobile()) {
