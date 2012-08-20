@@ -43,7 +43,7 @@ $(function() {
       $(this).contenthover({
         effect: "show"
       });
-      //$("#container").masonry("appended", $snapbox);
+      $("#container").masonry("appended", $snapbox);
     });
  };
   
