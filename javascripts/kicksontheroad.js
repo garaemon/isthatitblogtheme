@@ -132,7 +132,7 @@ $(function() {
     var $caption = $('<h2>' + name + '</h2>');
     $img.addClass("snapimage");
     $("#snap-wrapper #contentbox").prepend($img);
-    $("#snap-wrapper #.captionbox").prepend($caption);
+    $("#snap-wrapper .captionbox").prepend($caption);
   };
   
   // /snap?photoURL=...
