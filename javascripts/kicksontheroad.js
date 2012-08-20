@@ -23,11 +23,11 @@ $(function() {
     });
     $(".snapbox").each(function() {
       var $snapbox = $(this);
-      arrangeSnapbox($snapbox);
+      arrangeSnapbox($snapbox, true);
     });
   });
 
-  function arrangeSnapbox($snapbox) {
+  function arrangeSnapbox($snapbox, no_masonry) {
     $snapbox.find("img").imagesLoaded(function() {
       var name = "";
       $snapbox.find(".tag").each(function() { //parse names
@@ -47,7 +47,8 @@ $(function() {
       $(this).contenthover({
         effect: "show"
       });
-      $("#container").masonry("appended", $snapbox);
+      if (no_masonry)
+        $("#container").masonry("appended", $snapbox);
     });
  };
   
