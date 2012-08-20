@@ -107,4 +107,30 @@ $(function() {
       loadNextPage(loaded_index + 1);
     }
   });
+
+  function getParameters() {
+    var splitted_row_params = [];
+    var splitted_params = {};
+    var q_splitted_params = location.search.split("?");
+    if (q_splitted_params.length > 1) {
+      splitted_row_params = q_splitted_params[1].split("&");
+    }
+    for (var i = 0; i < splitted_row_params.length; i++) {
+      var params = splitted_row_params[i];
+      splitted_params[params.split("=")[0]] = params.split("=")[1];
+    }
+    return splitted_params;
+  };
+  
+  function snapMain() {
+    var params = getParameters();
+    var photoURL = params.photoURL;
+    console.log(photoURL);
+  };
+  
+  // /snap?photoURL=...
+  if (location.pathname.indexOf("/snap") === 0) {
+    snapMain();
+  }
+  
 });
