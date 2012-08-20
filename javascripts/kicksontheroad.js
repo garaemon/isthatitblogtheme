@@ -138,12 +138,12 @@ $(function() {
     console.log("try to fetch /tagged/" + tag);
     $.ajax({
       type: "GET",
-      url: "/tagged/" + tag,
+      //url: "/tagged/" + tag + "/page/" + index,
+      url: "/page/" + index,
       success: function(data) {
         var $html = $(data);
         console.log("success to fetch the next page");
         var $snapboxes = $html.find(".snapbox");
-        
         if ($snapboxes.length > 0) {
           $("#side-snaps-box").append($snapboxes);
           if (index == 1) {
@@ -153,6 +153,7 @@ $(function() {
                 isAnimated: false,
                 itemSelector: ".snapbox"
               });
+              loadSideSnaps(tag, index + 1);
             });
             $snapboxes.each(function() {
               var $snapbox = $(this);
@@ -163,6 +164,9 @@ $(function() {
             $snapboxes.each(function() {
               var $snapbox = $(this);
               arrangeSnapbox($snapbox, false, "#side-snapx-box");
+            });
+            $snapboxes.imagesLoaded(function() {
+              loadSideSnaps(tag, index + 1);
             });
           }
         }
