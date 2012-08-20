@@ -45,14 +45,13 @@ $(function() {
           $snapbox.find(".imglink")
             .attr("href", $snapbox.find(".imglink").attr("href") + "&tag="+ tagname);
         }
-        else if (startsWith(tag, "tag:")) {
-          console.log("found tag");
-          var tag_feature = tag.slice(5);
-          // change the link
-          $snapbox.find(".imglink")
-            .attr("href", $snapbox.find(".imglink").attr("href") + "&tag="+ tag_feature);
+        else if (location.pathname.indexOf("/snap") === 0) {
+          var params = getParameters();
+          if (params.tag) {
+            $snapbox.find(".imglink")
+            .attr("href", $snapbox.find(".imglink").attr("href") + "&tag=" + params.tag);
+          }
         }
-        
       });
       var $contenthover = $('<div class="contenthover center">'
                             + name.toUpperCase() + '</div>');
