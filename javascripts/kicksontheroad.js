@@ -36,7 +36,8 @@ $(function() {
         if (startsWith(tag, "name:")) {
           name = tag.slice(5);
           // change the link
-          //$snapbox.find(".imglink").attr("href", "/tagged/" + tag);
+          $snapbox.find(".imglink")
+            .attr("href", $snapbox.find(".imglink").attr("href") + "&name="+ name);
         }
       });
       var $contenthover = $('<div class="contenthover center">'
@@ -125,10 +126,13 @@ $(function() {
   function snapMain() {
     var params = getParameters();
     var photoURL = params.photoURL;
+    var name = params.name;
     console.log(photoURL);
-    var $img = $('<img src="' + photoURL + '"/>')
+    var $img = $('<img src="' + photoURL + '"/>');
+    var $caption = $('<h2>' + name + '</h2>');
     $img.addClass("snapimage");
     $("#snap-wrapper #contentbox").prepend($img);
+    $("#snap-wrapper #.captionbox").prepend($caption);
   };
   
   // /snap?photoURL=...
