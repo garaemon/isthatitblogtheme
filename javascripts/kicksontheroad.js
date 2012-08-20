@@ -40,11 +40,13 @@ $(function() {
             .attr("href", $snapbox.find(".imglink").attr("href") + "&name="+ name);
         }
         if (location.pathname.indexOf("/tagged/featured:") === 0) {
+          console.log("found featured");
           var tagname = location.pathname.slice("/tagged/".length);
           $snapbox.find(".imglink")
             .attr("href", $snapbox.find(".imglink").attr("href") + "&tag="+ tagname);
         }
         else if (startsWith(tag, "tag:")) {
+          console.log("found tag");
           var tag_feature = tag.slice(5);
           // change the link
           $snapbox.find(".imglink")
