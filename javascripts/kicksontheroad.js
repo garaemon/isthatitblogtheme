@@ -138,8 +138,8 @@ $(function() {
     console.log("try to fetch /tagged/" + tag);
     $.ajax({
       type: "GET",
-      //url: "/tagged/" + tag + "/page/" + index,
-      url: "/page/" + index,
+      url: "/tagged/" + tag + "/page/" + index,
+      //url: "/page/" + index,
       success: function(data) {
         var $html = $(data);
         console.log("success to fetch the next page");
