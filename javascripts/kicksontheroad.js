@@ -75,21 +75,25 @@ $(function() {
         console.log("success to fetch the next page");
         var $html = $(data);
         var $snapboxes = $html.find(".snapbox");
-        console.log($snapboxes);
-        //$("#loading").before($snapboxes);
-        $("#container").append($snapboxes);
-        loaded_index = loaded_index + 1;
-        $snapboxes.imagesLoaded(function() {
-          console.log("images are loaded at " + loaded_index);
-          bottom_lock = false;
-        });
-        $snapboxes.each(function() {
-          var $snapbox = $(this);
-          $snapbox.imagesLoaded(function() {
-            console.log("loaded");
-            arrangeSnapbox($snapbox);
+        if ($snapboxes.length > 0) {
+          $("#container").append($snapboxes);
+          loaded_index = loaded_index + 1;
+          $snapboxes.imagesLoaded(function() {
+            console.log("images are loaded at " + loaded_index);
+            bottom_lock = false;
           });
-        });
+          $snapboxes.each(function() {
+            var $snapbox = $(this);
+            $snapbox.imagesLoaded(function() {
+              console.log("loaded");
+              arrangeSnapbox($snapbox);
+            });
+          });
+        }
+        else {
+          console.log("done");
+          $("#loading").remove();
+        }
       }
     });
   };
