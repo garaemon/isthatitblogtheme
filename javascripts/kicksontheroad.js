@@ -129,7 +129,8 @@ $(function() {
     var name = params.name;
     console.log(photoURL);
     var $img = $('<img src="' + photoURL + '"/>');
-    var $caption = $('<h2>' + name + '</h2>');
+    var $caption = $('<h1>' + name + '</h1>'
+                     + '<a href="/store" target="_blank"><h2>SHOP NOW></h2></a>');
     $img.addClass("snapimage");
     $("#snap-wrapper #contentbox").prepend($img);
     $("#snap-wrapper .captionbox").prepend($caption);
