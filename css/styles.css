@@ -329,10 +329,6 @@
   padding-left: 10px;
   padding-right: 10px;
 }
-#wrapper #featured-wrapper img {
-  padding: 0;
-  margin: 0;
-}
 #wrapper #featured-wrapper h1 {
   height: 80px;
   line-height: 80px;
@@ -344,6 +340,7 @@
 #wrapper #featured-wrapper ul {
   list-style: none;
   margin: 0;
+  padding: 0;
 }
 #wrapper #featured-wrapper ul li {
   padding-bottom: 20px;
