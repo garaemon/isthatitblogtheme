@@ -126,10 +126,12 @@ $(function() {
     var params = getParameters();
     var photoURL = params.photoURL;
     console.log(photoURL);
+    var $img = $('<img src="' + photoURL + '"/>')
+    $img.addClass("snapimage");
+    $("#snap-wrapper #contentbox").prepend($img);
   };
   
   // /snap?photoURL=...
-  console.log(location.pathname);
   if (location.pathname.indexOf("/snap") === 0) {
     snapMain();
   }
