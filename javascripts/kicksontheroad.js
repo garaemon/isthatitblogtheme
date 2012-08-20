@@ -135,6 +135,7 @@ $(function() {
   };
 
   function loadSideSnaps(tag, index) {
+    console.log("try to fetch /tagged/" + tag);
     $.ajax({
       type: "GET",
       url: "/tagged/" + tag,
@@ -178,6 +179,7 @@ $(function() {
     else if (name)
       tag = "name:" + name;
     if (tag) {
+      console.log("using " + tag);
       $("#side-snaps").masonry({
         columnwidth: 140,
         isAnimated: false,
