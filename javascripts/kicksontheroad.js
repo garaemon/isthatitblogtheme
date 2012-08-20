@@ -24,7 +24,7 @@ $(function() {
   });
 
   function arrangeSnapbox($snapbox) {
-    $(this).find("img").imagesLoaded(function() {
+    $snapbox.find("img").imagesLoaded(function() {
       var name = "";
       $snapbox.find(".tag").each(function() { //parse names
         var $a = $(this).find("a");
