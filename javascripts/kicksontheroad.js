@@ -76,8 +76,8 @@ $(function() {
         var $html = $(data);
         var $snapboxes = $html.find(".snapbox");
         console.log($snapboxes);
-        $("#loading").before($snapboxes);
-        //$("#container").append($snapboxes);
+        //$("#loading").before($snapboxes);
+        $("#container").append($snapboxes);
         loaded_index = loaded_index + 1;
         $snapboxes.imagesLoaded(function() {
           console.log("images are loaded at " + loaded_index);
