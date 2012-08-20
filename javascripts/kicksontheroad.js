@@ -126,7 +126,7 @@ $(function() {
   function snapMain() {
     var params = getParameters();
     var photoURL = params.photoURL;
-    var name = decodeURL(params.name);
+    var name = decodeURI(params.name);
     var $img = $('<img src="' + photoURL + '"/>');
     if (name) {
       var $caption = $('<h1>' + name + '</h1>'
