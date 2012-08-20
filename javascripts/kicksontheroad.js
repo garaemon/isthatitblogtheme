@@ -144,11 +144,11 @@ $(function() {
         console.log("success to fetch the next page");
         var $snapboxes = $html.find(".snapbox");
         if ($snapboxes.length > 0) {
-          $("#side-snaps").append($snapboxes);
+          $("#side-snaps-box").append($snapboxes);
           $snapboxes.each(function() {
             var $snapbox = $(this);
             $snapbox.imagesLoaded(function() {
-              $("#side-snaps").masonry("appended", $snapbox);
+              $("#side-snaps-box").masonry("appended", $snapbox);
             });
           });
                           
@@ -180,7 +180,7 @@ $(function() {
       tag = "name:" + name;
     if (tag) {
       console.log("using " + tag);
-      $("#side-snaps").masonry({
+      $("#side-snaps-box").masonry({
         columnwidth: 140,
         isAnimated: false,
         itemSelector: ".snapbox"
