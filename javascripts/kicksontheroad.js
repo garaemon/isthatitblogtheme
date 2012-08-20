@@ -79,6 +79,7 @@ $(function() {
         //$("#container").append($snapboxes);
         loaded_index = loaded_index + 1;
         $snapboxes.imagesLoaded(function() {
+          console.log("images are loaded at " + loaded_index);
           bottom_lock = true;
         });
       }
