@@ -86,6 +86,7 @@ $(function() {
         $snapboxes.each(function() {
           var $snapbox = $(this);
           $snapbox.imagesLoaded(function() {
+            console.log("loaded");
             arrangeSnapbox($snapbox);
           });
         });
