@@ -47,7 +47,7 @@ $(function() {
       $(this).contenthover({
         effect: "show"
       });
-      if (no_masonry)
+      if (!no_masonry)
         $("#container").masonry("appended", $snapbox);
     });
  };
