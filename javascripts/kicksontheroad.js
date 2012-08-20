@@ -206,5 +206,7 @@ $(function() {
   if (location.pathname.indexOf("/snap") === 0) {
     snapMain();
   }
-  
+  else if (location.pathname.indexOf("/store") === 0) {
+    location.href = "http://store.kicksontheroad.com";
+  }
 });
