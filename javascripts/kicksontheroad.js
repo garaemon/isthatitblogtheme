@@ -60,7 +60,9 @@ $(function() {
       });
     }
     else {
-      $(window).bottom();
+      $(window).bottom({
+        proximity: 0.1
+      });
     }
   }
 
