@@ -22,9 +22,8 @@ $(function() {
       itemSelector: ".snapbox"
     });
   });
-  
-  $(".snapbox").each(function() {
-    var $snapbox = $(this);
+
+  function arrangeSnapbox($snapbox) {
     $(this).find("img").imagesLoaded(function() {
       var name = "";
       $snapbox.find(".tag").each(function() { //parse names
@@ -46,8 +45,12 @@ $(function() {
       });
       //$("#container").masonry("appended", $snapbox);
     });
-  });
-
+ };
+  
+  $(".snapbox").each(function() {
+    var $snapbox = $(this);
+    arrangeSnapbox($snapbox);
+                   
   if ($.isMobile()) {
     $(window).bottom({
       proximity: 0.3
@@ -62,9 +65,16 @@ $(function() {
       type: "GET",
       url: "/page/" + (id + 1),
       error: function() {
+        alert("network does not work, sorry");
       },
       success: function(data) {
-        console.log(data);
+        var $html = $(data);
+        var $snapboxes = $html.find(".snapbox");
+        $("#container").append($snapboxes);
+        loaded_index = loaded_index + 1;
+        $snapboxes.imagesLoaded(function() {
+          bottom_lock = true;
+        });
       }
     });
   };
@@ -77,7 +87,5 @@ $(function() {
       bottom_lock = true;
       loadNextPage(loaded_index + 1);
     }
-    
   });
-  
 });
