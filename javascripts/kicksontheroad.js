@@ -61,6 +61,7 @@ $(function() {
   }
 
   function loadNextPage(id) {
+    console.log("access to /page/" + (id + 1));
     $.ajax({
       type: "GET",
       url: "/page/" + (id + 1),
@@ -68,6 +69,7 @@ $(function() {
         alert("network does not work, sorry");
       },
       success: function(data) {
+        console.log("success to fetch the next page");
         var $html = $(data);
         var $snapboxes = $html.find(".snapbox");
         $("#container").append($snapboxes);
@@ -83,7 +85,7 @@ $(function() {
   var loaded_index = 0;
   $(window).bind("bottom", function() {
     if (!bottom_lock) {
-      console.log("load");
+      console.log("bottom event fired");
       bottom_lock = true;
       loadNextPage(loaded_index + 1);
     }
