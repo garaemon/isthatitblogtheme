@@ -178,6 +178,7 @@ $(function() {
   };
   
   function snapMain() {
+    $(".custompage").html("");  // clear
     var params = getParameters();
     var photoURL = params.photoURL;
     var name = decodeURI(params.name);
