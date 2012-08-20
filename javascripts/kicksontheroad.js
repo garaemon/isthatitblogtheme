@@ -66,9 +66,12 @@ $(function() {
 
   function loadNextPage(id) {
     console.log("access to /page/" + (id + 1));
+    var url = "/page/" + (id + 1);
+    if (locatoin.pathname != "/")
+      url = location.pathname + url;
     $.ajax({
       type: "GET",
-      url: location.pathname + "/page/" + (id + 1),
+      url: url,
       error: function() {
         alert("network does not work, sorry");
       },
