@@ -67,7 +67,7 @@ $(function() {
   function loadNextPage(id) {
     console.log("access to /page/" + (id + 1));
     var url = "/page/" + (id + 1);
-    if (locatoin.pathname != "/")
+    if (location.pathname != "/")
       url = location.pathname + url;
     $.ajax({
       type: "GET",
