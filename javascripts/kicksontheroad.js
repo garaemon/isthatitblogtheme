@@ -51,13 +51,16 @@ $(function() {
     var $snapbox = $(this);
     arrangeSnapbox($snapbox);
   });
-  if ($.isMobile()) {
-    $(window).bottom({
-      proximity: 0.3
-    });
-  }
-  else {
-    $(window).bottom();
+  
+  if($("#loading").length > 0) { //only support in index page
+    if ($.isMobile()) {
+      $(window).bottom({
+        proximity: 0.3
+      });
+    }
+    else {
+      $(window).bottom();
+    }
   }
 
   function loadNextPage(id) {
@@ -72,7 +75,8 @@ $(function() {
         console.log("success to fetch the next page");
         var $html = $(data);
         var $snapboxes = $html.find(".snapbox");
-        $("#container").append($snapboxes);
+        $("#loading").before($snapboxes);
+        //$("#container").append($snapboxes);
         loaded_index = loaded_index + 1;
         $snapboxes.imagesLoaded(function() {
           bottom_lock = true;
