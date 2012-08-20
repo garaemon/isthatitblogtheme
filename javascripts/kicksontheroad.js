@@ -157,13 +157,13 @@ $(function() {
             });
             $snapboxes.each(function() {
               var $snapbox = $(this);
-              arrangeSnapbox($snapbox, true, "#side-snapx-box");
+              arrangeSnapbox($snapbox, true, "#side-snap-box");
             });
           }
           else {
             $snapboxes.each(function() {
               var $snapbox = $(this);
-              arrangeSnapbox($snapbox, false, "#side-snapx-box");
+              arrangeSnapbox($snapbox, false, "#side-snap-box");
             });
             $snapboxes.imagesLoaded(function() {
               loadSideSnaps(tag, index + 1);
