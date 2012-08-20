@@ -201,7 +201,7 @@ $(function() {
     // load side images
     var tag = null;
     if (params.tag)
-      tag = "tag:" + params.tag;
+      tag = params.tag;
     else if (name && name != "undefined")
       tag = "name:" + name;
     if (tag) {
