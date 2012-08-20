@@ -81,7 +81,7 @@ $(function() {
       type: "GET",
       url: url,
       error: function() {
-        alert("network does not work, sorry");
+        console.log("network does not work, sorry");
       },
       success: function(data) {
         console.log("success to fetch the next page");
@@ -172,7 +172,7 @@ $(function() {
         }
       },
       error: function() {
-        alert("sorry, network does not work");
+        console.log("sorry, network does not work");
       }
     });
   };
