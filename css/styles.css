@@ -255,6 +255,9 @@
 #wrapper #under-construction-wrapper {
   padding-top: 50px;
 }
+#wrapper #about-wrapper p {
+  display: block;
+}
 #wrapper #about-wrapper #heading-wrapper {
   padding-bottom: 30px;
 }
