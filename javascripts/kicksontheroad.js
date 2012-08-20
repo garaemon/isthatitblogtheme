@@ -182,7 +182,7 @@ $(function() {
     var photoURL = params.photoURL;
     var name = decodeURI(params.name);
     var $img = $('<img src="' + photoURL + '"/>');
-    if (name) {
+    if (name && name != "undefined") {
       var $caption = $('<h1>' + name + '</h1>'
                        + '<a href="/store" target="_blank"><h2>SHOP NOW></h2></a>');
       $("#snap-wrapper .captionbox").prepend($caption);
@@ -193,7 +193,7 @@ $(function() {
     var tag = null;
     if (params.tag)
       tag = "tag:" + params.tag;
-    else if (name)
+    else if (name && name != "undefined")
       tag = "name:" + name;
     if (tag) {
       console.log("using " + tag);
