@@ -129,6 +129,7 @@ $(function() {
   };
   
   // /snap?photoURL=...
+  console.log(location.pathname);
   if (location.pathname.indexOf("/snap") === 0) {
     snapMain();
   }
