@@ -103,8 +103,8 @@
 }
 #wrapper #titlebar #title-wrapper .fb-like {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 60px;
+  right: 75px;
 }
 #wrapper #titlebar #link-wrapper {
   padding-top: 27px;
