@@ -127,13 +127,15 @@ $(function() {
     var params = getParameters();
     var photoURL = params.photoURL;
     var name = params.name;
-    console.log(photoURL);
     var $img = $('<img src="' + photoURL + '"/>');
-    var $caption = $('<h1>' + name + '</h1>'
-                     + '<a href="/store" target="_blank"><h2>SHOP NOW></h2></a>');
+    if (name) {
+      var $caption = $('<h1>' + name + '</h1>'
+                       + '<a href="/store" target="_blank"><h2>SHOP NOW></h2></a>');
+      $("#snap-wrapper .captionbox").prepend($caption);
+    }
     $img.addClass("snapimage");
     $("#snap-wrapper #contentbox").prepend($img);
-    $("#snap-wrapper .captionbox").prepend($caption);
+    
   };
   
   // /snap?photoURL=...
