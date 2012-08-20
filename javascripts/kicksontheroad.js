@@ -75,6 +75,7 @@ $(function() {
         console.log("success to fetch the next page");
         var $html = $(data);
         var $snapboxes = $html.find(".snapbox");
+        console.log($snapboxes);
         $("#loading").before($snapboxes);
         //$("#container").append($snapboxes);
         loaded_index = loaded_index + 1;
