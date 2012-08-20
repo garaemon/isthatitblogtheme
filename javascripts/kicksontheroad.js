@@ -178,7 +178,7 @@ $(function() {
     else if (name)
       tag = "name:" + name;
     if (tag) {
-      $(this).masonry({
+      $("#side-snaps").masonry({
         columnwidth: 140,
         isAnimated: false,
         itemSelector: ".snapbox"
