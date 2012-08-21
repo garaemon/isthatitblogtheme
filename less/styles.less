@@ -201,8 +201,11 @@
             margin-bottom: @caption-box-padding-bottom;
             height: @caption-box-height - @caption-box-padding-bottom;
             color: black;
+            position: relative;
             h3 {
                 height: @caption-box-line-height;
+                position:absolute;
+                bottom:0;
                 //a {
                     color: black;
                     padding-left: 5px;
@@ -219,6 +222,8 @@
                 //}
             }
             h1 {
+                position:absolute;
+                bottom:0;
                 padding-right: 10px;
                 margin: 0;
                 max-width: 500px;

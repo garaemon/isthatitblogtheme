@@ -188,9 +188,12 @@
   margin-bottom: 26px;
   height: 54px;
   color: black;
+  position: relative;
 }
 #wrapper #snap-wrapper .captionbox h3 {
   height: 27px;
+  position: absolute;
+  bottom: 0;
   color: black;
   padding-left: 5px;
   padding-right: 5px;
@@ -201,6 +204,8 @@
   margin: 0;
 }
 #wrapper #snap-wrapper .captionbox h1 {
+  position: absolute;
+  bottom: 0;
   padding-right: 10px;
   margin: 0;
   max-width: 500px;
