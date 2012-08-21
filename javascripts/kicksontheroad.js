@@ -202,6 +202,13 @@ $(function() {
       tag = params.tag;
     else if (name && name != "undefined")
       tag = "name:" + name;
+    else {
+      var name = null;
+      $(".taglink").each(function() {
+        if ($(this).html().indexOf("name:") === 0)
+          tag = $(this).html();
+      });
+    }
     if (tag) {
       console.log("using " + tag);
       loadSideSnaps(tag, 1);
