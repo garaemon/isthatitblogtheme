@@ -241,6 +241,9 @@
   font-family: Times New Roman;
   font-weight: normal;
 }
+#wrapper #snap-wrapper #sns-buttons {
+  display: inline;
+}
 #wrapper #snap-wrapper #sns-buttons .fb-like {
   top: -2px;
 }
