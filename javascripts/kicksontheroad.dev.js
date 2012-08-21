@@ -35,18 +35,15 @@ $(function() {
             .attr("href", $snapbox.find(".imglink").attr("href") + "?name="+ name);
         }
       });
-      // if (location.pathname.indexOf("/tagged/featured:") === 0) {
-      //   var tagname = location.pathname.slice("/tagged/".length);
-      //   $snapbox.find(".imglink")
-      //     .attr("href", $snapbox.find(".imglink").attr("href") + "&tag="+ tagname);
-      // }
-      // else if (location.pathname.indexOf("/snap") === 0) {
-      //   var params = getParameters();
-      //   if (params.tag) {
-      //     $snapbox.find(".imglink")
-      //       .attr("href", $snapbox.find(".imglink").attr("href") + "&tag=" + params.tag);
-      //   }
-      // }
+      if (location.pathname.indexOf("/tagged/featured:") === 0) {
+        var tagname = location.pathname.slice("/tagged/".length);
+        var $imglink = $snapbox.find(".imglink");
+        var href = $imglink.attr("href");
+        var split_char = "&";
+        if (href.indexOf("?") == -1)
+          split_char = "?";
+        $imglink.attr("href", href + split_char  + "tag="+ tagname);
+      }
       var $contenthover = $('<div class="contenthover center">'
                             + name.toUpperCase() + '</div>');
       $contenthover.css("height", $(this).height());
@@ -183,7 +180,8 @@ $(function() {
     var params = getParameters();
     var name = decodeURI(params.name);
     if (name && name != "undefined") {
-      $("#snap-wrapper .captionbox h1").html(name.toUpperCase());
+      if (!$("#snap-wrapper .captionbox h1").html()) // only if it does not have title
+        $("#snap-wrapper .captionbox h1").html(name.toUpperCase());
     }
     // load side images
     var tag = null;
