@@ -32,19 +32,27 @@ $(function() {
           name = tag.slice(5);
           // change the link
           $snapbox.find(".imglink")
-            .attr("href", $snapbox.find(".imglink").attr("href") + "&name="+ name);
+            .attr("href", $snapbox.find(".imglink").attr("href") + "?name="+ name);
         }
       });
       if (location.pathname.indexOf("/tagged/featured:") === 0) {
         var tagname = location.pathname.slice("/tagged/".length);
-        $snapbox.find(".imglink")
-          .attr("href", $snapbox.find(".imglink").attr("href") + "&tag="+ tagname);
+        var $imglink = $snapbox.find(".imglink");
+        var href = $imglink.attr("href");
+        var split_char = "&";
+        if (href.indexOf("?") == -1)
+          split_char = "?";
+        $imglink.attr("href", href + split_char  + "tag="+ tagname);
       }
-      else if (location.pathname.indexOf("/snap") === 0) {
+      else if (location.pathname.indexOf("/post") === 0) {
         var params = getParameters();
         if (params.tag) {
-          $snapbox.find(".imglink")
-            .attr("href", $snapbox.find(".imglink").attr("href") + "&tag=" + params.tag);
+          var $imglink = $snapbox.find(".imglink");
+          var href = $imglink.attr("href");
+          var split_char = "&";
+          if (href.indexOf("?") == -1)
+          split_char = "?";
+          $imglink.attr("href", href + split_char  + "tag="+ params.tag);
         }
       }
       var $contenthover = $('<div class="contenthover center">'
@@ -181,16 +189,11 @@ $(function() {
   function snapMain() {
     $(".custompage").remove();
     var params = getParameters();
-    var photoURL = params.photoURL;
     var name = decodeURI(params.name);
-    var $img = $('<img src="' + photoURL + '"/>');
     if (name && name != "undefined") {
-      var $caption = $('<h1>' + name.toUpperCase() + '</h1>'
-                       + '<a href="/store" target="_blank"><h2>SHOP NOW></h2></a>');
-      $("#snap-wrapper .captionbox").prepend($caption);
+      if (!$("#snap-wrapper .captionbox h1").html()) // only if it does not have title
+        $("#snap-wrapper .captionbox h1").html(name.toUpperCase());
     }
-    $img.addClass("snapimage");
-    $("#snap-wrapper #contentbox").prepend($img);
     // load side images
     var tag = null;
     if (params.tag)
@@ -203,8 +206,7 @@ $(function() {
     }
   };
   
-  // /snap?photoURL=...
-  if (location.pathname.indexOf("/snap") === 0) {
+  if (location.pathname.indexOf("/post") === 0) {
     snapMain();
   }
   else if (location.pathname.indexOf("/store") === 0) {
