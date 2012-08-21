@@ -181,14 +181,10 @@ $(function() {
   function snapMain() {
     $(".custompage").remove();
     var params = getParameters();
-    var photoURL = params.photoURL;
     var name = decodeURI(params.name);
-    var $img = $('<img src="' + photoURL + '"/>');
     if (name && name != "undefined") {
       $("#snap-wrapper .captionbox h1").html(name.toUpperCase());
     }
-    $img.addClass("snapimage");
-    $("#snap-wrapper #contentbox").prepend($img);
     // load side images
     var tag = null;
     if (params.tag)
@@ -201,7 +197,6 @@ $(function() {
     }
   };
   
-  // /snap?photoURL=...
   if (location.pathname.indexOf("/post") === 0) {
     snapMain();
   }
