@@ -191,6 +191,7 @@
   position: relative;
 }
 #wrapper #snap-wrapper .captionbox h3 {
+  line-height: 27px;
   color: black;
   padding-left: 5px;
   padding-right: 5px;
@@ -201,6 +202,7 @@
   margin: 0;
 }
 #wrapper #snap-wrapper .captionbox h1 {
+  line-height: 27px;
   padding-right: 10px;
   margin: 0;
   max-width: 500px;
