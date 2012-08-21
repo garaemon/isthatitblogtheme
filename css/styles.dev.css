@@ -185,8 +185,10 @@
   padding-left: 10px;
 }
 #wrapper #snap-wrapper .captionbox {
-  height: 80px;
+  padding-bottom: 26px;
+  height: 54px;
   color: black;
+  vertical-align: bottom;
 }
 #wrapper #snap-wrapper .captionbox h3 a {
   color: black;
@@ -211,14 +213,12 @@
   -o-text-overflow: ellipsis;
   display: block;
   float: left;
-  line-height: 80px;
   font-size: 18pt;
   font-family: Times New Roman;
   font-weight: normal;
 }
 #wrapper #snap-wrapper .captionbox a {
   text-decoration: none;
-  line-height: 80px;
   float: left;
 }
 #wrapper #snap-wrapper .captionbox h2 {
