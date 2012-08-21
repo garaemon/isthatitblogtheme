@@ -185,7 +185,7 @@
   padding-left: 10px;
 }
 #wrapper #snap-wrapper .captionbox {
-  padding-bottom: 26px;
+  margin-bottom: 26px;
   height: 54px;
   color: black;
   position: relative;
