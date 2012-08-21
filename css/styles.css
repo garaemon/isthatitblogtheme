@@ -241,6 +241,13 @@
 #wrapper #snap-wrapper #contentbox #sns-buttons .fb-like {
   top: -2px;
 }
+#wrapper #snap-wrapper #side-snaps-after {
+  float: right;
+  width: 430px;
+}
+#wrapper #snap-wrapper #side-snaps-after img {
+  width: 120px;
+}
 #wrapper #snap-wrapper #side-snaps-box {
   float: right;
   width: 430px;
