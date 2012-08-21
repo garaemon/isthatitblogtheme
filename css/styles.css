@@ -189,13 +189,16 @@
   color: black;
 }
 #wrapper #snap-wrapper .captionbox h1 {
-  width: 100px;
+  padding: 0;
+  margin: 0;
+  max-width: 500px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
-  display: inline;
+  display: block;
+  float: left;
   line-height: 80px;
   font-size: 18pt;
   font-family: Times New Roman;
@@ -203,6 +206,8 @@
 }
 #wrapper #snap-wrapper .captionbox a {
   text-decoration: none;
+  line-height: 80px;
+  float: left;
 }
 #wrapper #snap-wrapper .captionbox h2 {
   padding-left: 5px;
