@@ -193,6 +193,8 @@
   font-size: 14pt;
   padding-left: 5px;
   padding-right: 5px;
+}
+#wrapper #snap-wrapper .captionbox h3 a:hover {
   text-decoration: underline;
 }
 #wrapper #snap-wrapper .captionbox h1 {
