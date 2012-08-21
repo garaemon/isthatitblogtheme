@@ -189,6 +189,12 @@
   color: black;
 }
 #wrapper #snap-wrapper .captionbox h1 {
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
   display: inline;
   line-height: 80px;
   font-size: 18pt;
