@@ -35,7 +35,7 @@ $(function() {
             .attr("href", $snapbox.find(".imglink").attr("href") + "?name="+ name);
         }
       });
-      if (location.pathname.indexOf("/tagged/featured:") === 0) {
+      if (location.pathname.indexOf("/tagged/") === 0) {
         var tagname = location.pathname.slice("/tagged/".length);
         var $imglink = $snapbox.find(".imglink");
         var href = $imglink.attr("href");
