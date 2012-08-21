@@ -38,6 +38,7 @@
 
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <meta name="viewport" content="width=1080" />
+    
     <script type="text/javascript">
       
       var _gaq = _gaq || [];
@@ -143,10 +144,23 @@
       <!-- snap -->
       <div id="snap-wrapper">
         <div class="captionbox">
-          <h1>{PhotoAlt}</h1> <a href="/store" target="_blank"><h2>SHOP NOW > </h2></a>
+          <h1>{PhotoAlt}</h1>
+          {block:HasTags}
+          <h3>
+            {block:Tags}
+            <a href="{TagURL}">#{Tag}</a>
+            {/block:Tags}
+          </h3>
+          {/block:HasTags}
+          <a href="/store" target="_blank"><h2>SHOP NOW > </h2></a>
         </div>
         <div id="contentbox">
           <img class="snapimage" src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+          <div id="sns-buttons">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-via="kicksontheroad">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            <div class="fb-like" data-href="http://kicksontheroad.com/snap/<%- snap._id %>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+          </div>
         </div> <!-- #contentbox -->
         <div id="side-snaps-box">
           <!-- fill by js -->
