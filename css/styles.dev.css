@@ -246,6 +246,7 @@
 }
 #wrapper #snap-wrapper #sns-buttons .fb-like {
   top: -2px;
+  left: 10px;
 }
 #wrapper #snap-wrapper #contentbox {
   float: left;
