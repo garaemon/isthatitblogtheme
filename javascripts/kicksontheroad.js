@@ -172,6 +172,7 @@ $(function() {
           else {
             $snapboxes.each(function() {
               var $snapbox = $(this);
+              $snapbox.css("position", "absolute"); // to avoid flickering of the new images
               $snapbox.css("bottom", 0); // to avoid flickering of the new images
               arrangeSnapbox($snapbox, false, "#side-snaps-box");
             });
