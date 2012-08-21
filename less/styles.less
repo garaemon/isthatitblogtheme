@@ -197,6 +197,7 @@
         .captionbox {
             @caption-box-height: 80px;
             @caption-box-padding-bottom: 26px;
+            @caption-box-line-height: 27px;
             margin-bottom: @caption-box-padding-bottom;
             height: @caption-box-height - @caption-box-padding-bottom;
             color: black;
@@ -207,6 +208,7 @@
                 font-family: Times New Roman;
                 font-size: 13px;
                 font-weight: normal;
+                line-height: @caption-box-line-height;
                 &:hover {
                     text-decoration: underline;
                 }
@@ -222,7 +224,7 @@
                 -o-text-overflow: ellipsis;
                 display: block;
                 float: left;
-                //line-height: 80px;
+                line-height: @caption-box-line-height;
                 font-size: 18pt;
                 font-family: Times New Roman;
                 font-weight: normal;

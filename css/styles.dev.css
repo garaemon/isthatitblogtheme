@@ -196,6 +196,7 @@
   font-family: Times New Roman;
   font-size: 13px;
   font-weight: normal;
+  line-height: 27px;
 }
 #wrapper #snap-wrapper .captionbox h3 a:hover {
   text-decoration: underline;
@@ -211,6 +212,7 @@
   -o-text-overflow: ellipsis;
   display: block;
   float: left;
+  line-height: 27px;
   font-size: 18pt;
   font-family: Times New Roman;
   font-weight: normal;
