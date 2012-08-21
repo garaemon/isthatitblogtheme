@@ -243,10 +243,11 @@
 }
 #wrapper #snap-wrapper #sns-buttons {
   display: inline;
+  padding-left: 20px;
 }
 #wrapper #snap-wrapper #sns-buttons .fb-like {
   top: -2px;
-  left: 10px;
+  left: -20px;
 }
 #wrapper #snap-wrapper #contentbox {
   float: left;
