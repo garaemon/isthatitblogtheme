@@ -31,15 +31,15 @@ $(function() {
         if (startsWith(tag, "name:")) {
           name = tag.slice(5);
           // change the link
-          // $snapbox.find(".imglink")
-          //   .attr("href", $snapbox.find(".imglink").attr("href") + "&name="+ name);
+          $snapbox.find(".imglink")
+            .attr("href", $snapbox.find(".imglink").attr("href") + "&name="+ name);
         }
       });
-      // if (location.pathname.indexOf("/tagged/featured:") === 0) {
-      //   var tagname = location.pathname.slice("/tagged/".length);
-      //   $snapbox.find(".imglink")
-      //     .attr("href", $snapbox.find(".imglink").attr("href") + "&tag="+ tagname);
-      // }
+      if (location.pathname.indexOf("/tagged/featured:") === 0) {
+        var tagname = location.pathname.slice("/tagged/".length);
+        $snapbox.find(".imglink")
+          .attr("href", $snapbox.find(".imglink").attr("href") + "&tag="+ tagname);
+      }
       // else if (location.pathname.indexOf("/snap") === 0) {
       //   var params = getParameters();
       //   if (params.tag) {

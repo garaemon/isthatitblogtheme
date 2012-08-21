@@ -103,10 +103,11 @@
           </ul>
         </div>
       </div>
+      {block:IndexPage}
       <div id="main-wrapper">
         <div id="container">
         {block:Posts}
-          {block:Photo}
+        {block:Photo}
           <div class="snapbox">
             <!-- <a href="/snap?photoURL={PhotoURL-500}" class="imglink"> -->
             <a href="{Permalink}">
@@ -126,37 +127,41 @@
             </div>
           </div>
           {/block:Photo}
-          <!-- other type is not supported yet -->
           {/block:Posts}
         </div> <!-- #container -->
       </div> <!-- #main-wrapper -->
-      
-      {block:IndexPage}
-      <div class="hidden">
-        {/block:IndexPage}
-        <!-- custom page -->
-        {block:Posts}
-        <div class="custompage">
-          {Body}
-        </div>
-        {/block:Posts}
-        <!-- /snap -->
-        <div id="snap-wrapper">
-          <div class="captionbox">
-          </div>
-          <div id="contentbox">
-            
-          </div> <!-- #contentbox -->
-          <div id="side-snaps-box">
-            
-          </div> <!-- #side-snaps-box -->
-        </div>   <!-- #snap-wrapper -->
-        {block:IndexPage}
-      </div>
       {/block:IndexPage}
+      
+      {block:PermalinkPage} <!-- each post, custom page and 404 page-->
+      <!-- custom page -->
+      {block:Posts}
+      <div class="custompage"> <!-- custompage and 404 -->
+        {Body}
+      </div>
+      
+      {block:Photo}
+      <!-- snap -->
+      <div id="snap-wrapper">
+        {block:Caption}
+        <div class="captionbox">
+          <h1>{PhotoAlt}</h1> <a href="/store" target="_blank"><h2>SHOP NOW > </h2></a>
+        </div>
+        {/block:Caption}
+        <div id="contentbox">
+          <img class="snapimage" src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+        </div> <!-- #contentbox -->
+        <div id="side-snaps-box">
+          <!-- fill by js -->
+        </div> <!-- #side-snaps-box -->
+      </div>   <!-- #snap-wrapper -->
+      {/block:Photo}
+      {/block:Posts}
+      {/block:PermalinkPage}
+      
       {block:IndexPage}
       <div id="loading"></div>
       {/block:IndexPage}
+      
       <div id="fotter">
         <div id="left-fotter">
           &copy 2012 hhhungry, Inc. All Rights Reserved.
