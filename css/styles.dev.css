@@ -241,6 +241,9 @@
   font-family: Times New Roman;
   font-weight: normal;
 }
+#wrapper #snap-wrapper #sns-buttons .fb-like {
+  top: -2px;
+}
 #wrapper #snap-wrapper #contentbox {
   float: left;
   width: 500px;
@@ -256,9 +259,6 @@
   display: table-cell;
   vertical-align: middle;
   padding-bottom: 20px;
-}
-#wrapper #snap-wrapper #contentbox #sns-buttons .fb-like {
-  top: -2px;
 }
 #wrapper #snap-wrapper #side-snaps-after {
   float: right;
