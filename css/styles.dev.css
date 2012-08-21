@@ -188,6 +188,7 @@
   padding-bottom: 26px;
   height: 54px;
   color: black;
+  position: relative;
 }
 #wrapper #snap-wrapper .captionbox h3 a {
   position: absolute;
