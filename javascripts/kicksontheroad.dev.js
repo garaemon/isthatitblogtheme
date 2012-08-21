@@ -44,6 +44,17 @@ $(function() {
           split_char = "?";
         $imglink.attr("href", href + split_char  + "tag="+ tagname);
       }
+      else if (location.pathname.indexOf("/post") === 0) {
+        var params = getParameters();
+        if (params.tag) {
+          var $imglink = $snapbox.find(".imglink");
+          var href = $imglink.attr("href");
+          var split_char = "&";
+          if (href.indexOf("?") == -1)
+          split_char = "?";
+          $imglink.attr("href", href + split_char  + "tag="+ params.tag);
+        }
+      }
       var $contenthover = $('<div class="contenthover center">'
                             + name.toUpperCase() + '</div>');
       $contenthover.css("height", $(this).height());
