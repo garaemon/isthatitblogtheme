@@ -199,12 +199,13 @@
             @caption-box-padding-bottom: 26px;
             @caption-box-line-height: 27px;
             margin-bottom: @caption-box-padding-bottom;
-            height: @caption-box-height - @caption-box-padding-bottom;
+            height: @caption-box-line-height;
             color: black;
             position: relative;
+            padding-top: @caption-box-padding-bottom;
             h3 {
                 line-height: @caption-box-line-height;
-                //a {
+                a {
                     color: black;
                     padding-left: 5px;
                     padding-right: 5px;
@@ -214,10 +215,10 @@
                     float: left;
                     margin: 0;
                     //line-height: @caption-box-line-height;
-                    // &:hover {
-                    //     text-decoration: underline;
-                    // }
-                //}
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
             }
             h1 {
                 line-height: @caption-box-line-height;

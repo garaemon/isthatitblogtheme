@@ -186,12 +186,15 @@
 }
 #wrapper #snap-wrapper .captionbox {
   margin-bottom: 26px;
-  height: 54px;
+  height: 27px;
   color: black;
   position: relative;
+  padding-top: 26px;
 }
 #wrapper #snap-wrapper .captionbox h3 {
   line-height: 27px;
+}
+#wrapper #snap-wrapper .captionbox h3 a {
   color: black;
   padding-left: 5px;
   padding-right: 5px;
@@ -200,6 +203,9 @@
   font-weight: normal;
   float: left;
   margin: 0;
+}
+#wrapper #snap-wrapper .captionbox h3 a:hover {
+  text-decoration: underline;
 }
 #wrapper #snap-wrapper .captionbox h1 {
   line-height: 27px;
